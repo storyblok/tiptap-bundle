@@ -1,0 +1,7 @@
+# Composer
+/vendor/
+/composer.lock
+
+# Build artifacts
+/.build/
+/var/

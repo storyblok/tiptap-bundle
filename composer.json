@@ -1,0 +1,35 @@
+{
+    "name": "storyblok/tiptap-bundle",
+    "type": "symfony-bundle",
+    "description": "TipTap extensions for Storyblok integration",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Edoardo Dusi",
+            "email": "edo@edoardodusi.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "symfony/framework-bundle": "^6.0|^7.0",
+        "ueberdosis/tiptap-php": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Storyblok\\TiptapBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Storyblok\\TiptapBundle\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.7"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
