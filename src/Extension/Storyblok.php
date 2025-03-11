@@ -17,6 +17,10 @@ use Tiptap\Nodes\Blockquote;
 use Tiptap\Nodes\HardBreak;
 use Tiptap\Nodes\Image;
 use Tiptap\Nodes\Paragraph;
+use Tiptap\Nodes\Table;
+use Tiptap\Nodes\TableCell;
+use Tiptap\Nodes\TableHeader;
+use Tiptap\Nodes\TableRow;
 use Tiptap\Nodes\Text;
 
 final class Storyblok extends Extension
@@ -43,6 +47,10 @@ final class Storyblok extends Extension
                 'italic' => true,
                 'underline' => true,
                 'hardBreak' => true,
+                'table' => true,
+                'tableRow' => true,
+                'tableCell' => true,
+                'tableHeader' => true,
                 'bulletList' => true,
                 'orderedList' => true,
                 'listItem' => true,
@@ -68,6 +76,10 @@ final class Storyblok extends Extension
             $this->options['extensions']['italic'] ? new Italic() : null,
             $this->options['extensions']['underline'] ? new Underline() : null,
             $this->options['extensions']['hardBreak'] ? new HardBreak() : null,
+            $this->options['extensions']['table'] ? new Table() : null,
+            $this->options['extensions']['tableRow'] ? new TableRow() : null,
+            $this->options['extensions']['tableCell'] ? new TableCell() : null,
+            $this->options['extensions']['tableHeader'] ? new TableHeader() : null,
             $this->options['extensions']['bulletList'] ? new BulletList() : null,
             $this->options['extensions']['orderedList'] ? new OrderedList() : null,
             $this->options['extensions']['listItem'] ? new ListItem() : null,
