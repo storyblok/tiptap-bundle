@@ -12,8 +12,14 @@ use Storyblok\TiptapBundle\Node\ListItem;
 use Storyblok\TiptapBundle\Node\OrderedList;
 use Tiptap\Core\Extension;
 use Tiptap\Marks\Bold;
+use Tiptap\Marks\Code;
+use Tiptap\Marks\Highlight;
 use Tiptap\Marks\Italic;
 use Tiptap\Marks\Link;
+use Tiptap\Marks\Strike;
+use Tiptap\Marks\Subscript;
+use Tiptap\Marks\Superscript;
+use Tiptap\Marks\TextStyle;
 use Tiptap\Marks\Underline;
 use Tiptap\Nodes\Blockquote;
 use Tiptap\Nodes\Document;
@@ -41,7 +47,7 @@ final class Storyblok extends Extension
         ];
     }
 
-    public function addOptions()
+    public function addOptions(): array
     {
         return [
             'extensions' => [
@@ -51,6 +57,12 @@ final class Storyblok extends Extension
                 'link' => true,
                 'blockquote' => true,
                 'bold' => true,
+                'code' => true,
+                'highlight' => true,
+                'strike' => true,
+                'subscript' => true,
+                'superscript' => true,
+                'textStyle' => true,
                 'italic' => true,
                 'underline' => true,
                 'hardBreak' => true,
@@ -85,6 +97,12 @@ final class Storyblok extends Extension
             $this->options['extensions']['link'] ? new Link() : null,
             $this->options['extensions']['blockquote'] ? new Blockquote() : null,
             $this->options['extensions']['bold'] ? new Bold() : null,
+            $this->options['extensions']['code'] ? new Code() : null,
+            $this->options['extensions']['highlight'] ? new Highlight() : null,
+            $this->options['extensions']['strike'] ? new Strike() : null,
+            $this->options['extensions']['subscript'] ? new Subscript() : null,
+            $this->options['extensions']['superscript'] ? new Superscript() : null,
+            $this->options['extensions']['textStyle'] ? new TextStyle() : null,
             $this->options['extensions']['italic'] ? new Italic() : null,
             $this->options['extensions']['underline'] ? new Underline() : null,
             $this->options['extensions']['document'] ? new Document() : null,
