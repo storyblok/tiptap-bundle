@@ -1,4 +1,4 @@
-name: Source Code Check
+name: Code Quality
 on:
     push:
         branches:
@@ -55,8 +55,3 @@ jobs:
 
             - name: Rector rules
               run: composer run refactor-check-code
-
-
-
-
-
