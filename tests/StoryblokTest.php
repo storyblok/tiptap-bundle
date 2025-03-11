@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Storyblok\TiptapBundle\Extension\Storyblok;
 use Storyblok\TiptapBundle\Node\Blok;
 use Storyblok\TiptapBundle\Node\BulletList;
@@ -12,12 +14,13 @@ use Tiptap\Marks\Italic;
 use Tiptap\Marks\Link;
 use Tiptap\Marks\Underline;
 use Tiptap\Nodes\Blockquote;
+use Tiptap\Nodes\Document;
 use Tiptap\Nodes\HardBreak;
 use Tiptap\Nodes\Image;
 use Tiptap\Nodes\Paragraph;
 use Tiptap\Nodes\Text;
 
-it('adds extensions correctly', function () {
+it('adds extensions correctly', function (): void {
     $options = [
         'extensions' => [
             'image' => true,
@@ -44,7 +47,7 @@ it('adds extensions correctly', function () {
     $storyblok = new Storyblok($options);
     $extensions = $storyblok->addExtensions();
 
-    expect($extensions)->toHaveCount(15)
+    expect($extensions)->toHaveCount(24)
         ->and($extensions[0])->toBeInstanceOf(Image::class)
         ->and($extensions[1])->toBeInstanceOf(Text::class)
         ->and($extensions[2])->toBeInstanceOf(Paragraph::class)
@@ -53,16 +56,10 @@ it('adds extensions correctly', function () {
         ->and($extensions[5])->toBeInstanceOf(Bold::class)
         ->and($extensions[6])->toBeInstanceOf(Italic::class)
         ->and($extensions[7])->toBeInstanceOf(Underline::class)
-        ->and($extensions[8])->toBeInstanceOf(HardBreak::class)
-        ->and($extensions[9])->toBeInstanceOf(BulletList::class)
-        ->and($extensions[10])->toBeInstanceOf(OrderedList::class)
-        ->and($extensions[11])->toBeInstanceOf(ListItem::class)
-        ->and($extensions[12])->toBeInstanceOf(Heading::class)
-        ->and($extensions[13])->toBeInstanceOf(CodeBlock::class)
-        ->and($extensions[14])->toBeInstanceOf(Blok::class);
+        ->and($extensions[8])->toBeInstanceOf(Document::class);
 });
 
-it('enables only three extensions', function () {
+it('enables only three extensions', function (): void {
     $options = [
         'extensions' => [
             'image' => false,
@@ -74,6 +71,15 @@ it('enables only three extensions', function () {
             'italic' => true,
             'underline' => false,
             'hardBreak' => false,
+            'document' => false,
+            'horizontalRule' => false,
+            'mention' => false,
+            'taskList' => false,
+            'taskItem' => false,
+            'table' => false,
+            'tableRow' => false,
+            'tableCell' => false,
+            'tableHeader' => false,
             'bulletList' => false,
             'orderedList' => false,
             'listItem' => false,
@@ -87,7 +93,7 @@ it('enables only three extensions', function () {
     ];
 
     $storyblok = new Storyblok($options);
-    $extensions = array_values(array_filter($storyblok->addExtensions(), fn($extension) => $extension !== null));
+    $extensions = array_values(array_filter($storyblok->addExtensions(), fn($extension): bool => $extension !== null));
 
     expect($extensions)->toHaveCount(3)
         ->and($extensions[0])->toBeInstanceOf(Paragraph::class)

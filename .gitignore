@@ -5,3 +5,10 @@
 # Build artifacts
 /.build/
 /var/
+
+# Tests
+/tmp/
+
+# PHPCSFixer
+/.php_cs.cache
+/.php-cs-fixer.cache
