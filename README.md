@@ -162,6 +162,15 @@ The complete list of extensions (all enabled by default) is:
     'italic' => true,
     'underline' => true,
     'hardBreak' => true,
+    'document' => true,
+    'horizontalRule' => true,
+    'mention' => true,
+    'taskList' => true,
+    'taskItem' => true,
+    'table' => true,
+    'tableRow' => true,
+    'tableCell' => true,
+    'tableHeader' => true,
     
     // Storyblok extensions
     'bulletList' => true,

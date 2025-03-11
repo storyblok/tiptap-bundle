@@ -14,9 +14,18 @@ use Tiptap\Marks\Italic;
 use Tiptap\Marks\Link;
 use Tiptap\Marks\Underline;
 use Tiptap\Nodes\Blockquote;
+use Tiptap\Nodes\Document;
 use Tiptap\Nodes\HardBreak;
+use Tiptap\Nodes\HorizontalRule;
 use Tiptap\Nodes\Image;
+use Tiptap\Nodes\Mention;
 use Tiptap\Nodes\Paragraph;
+use Tiptap\Nodes\Table;
+use Tiptap\Nodes\TableCell;
+use Tiptap\Nodes\TableHeader;
+use Tiptap\Nodes\TableRow;
+use Tiptap\Nodes\TaskItem;
+use Tiptap\Nodes\TaskList;
 use Tiptap\Nodes\Text;
 
 final class Storyblok extends Extension
@@ -43,6 +52,15 @@ final class Storyblok extends Extension
                 'italic' => true,
                 'underline' => true,
                 'hardBreak' => true,
+                'document' => true,
+                'horizontalRule' => true,
+                'mention' => true,
+                'taskList' => true,
+                'taskItem' => true,
+                'table' => true,
+                'tableRow' => true,
+                'tableCell' => true,
+                'tableHeader' => true,
                 'bulletList' => true,
                 'orderedList' => true,
                 'listItem' => true,
@@ -67,7 +85,16 @@ final class Storyblok extends Extension
             $this->options['extensions']['bold'] ? new Bold() : null,
             $this->options['extensions']['italic'] ? new Italic() : null,
             $this->options['extensions']['underline'] ? new Underline() : null,
+            $this->options['extensions']['document'] ? new Document() : null,
+            $this->options['extensions']['horizontalRule'] ? new HorizontalRule() : null,
+            $this->options['extensions']['mention'] ? new Mention() : null,
+            $this->options['extensions']['taskList'] ? new TaskList() : null,
+            $this->options['extensions']['taskItem'] ? new TaskItem() : null,
             $this->options['extensions']['hardBreak'] ? new HardBreak() : null,
+            $this->options['extensions']['table'] ? new Table() : null,
+            $this->options['extensions']['tableRow'] ? new TableRow() : null,
+            $this->options['extensions']['tableCell'] ? new TableCell() : null,
+            $this->options['extensions']['tableHeader'] ? new TableHeader() : null,
             $this->options['extensions']['bulletList'] ? new BulletList() : null,
             $this->options['extensions']['orderedList'] ? new OrderedList() : null,
             $this->options['extensions']['listItem'] ? new ListItem() : null,
