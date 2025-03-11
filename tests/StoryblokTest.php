@@ -3,19 +3,13 @@
 declare(strict_types=1);
 
 use Storyblok\TiptapBundle\Extension\Storyblok;
-use Storyblok\TiptapBundle\Node\Blok;
-use Storyblok\TiptapBundle\Node\BulletList;
-use Storyblok\TiptapBundle\Node\CodeBlock;
-use Storyblok\TiptapBundle\Node\Heading;
-use Storyblok\TiptapBundle\Node\ListItem;
-use Storyblok\TiptapBundle\Node\OrderedList;
 use Tiptap\Marks\Bold;
+use Tiptap\Marks\Code;
+use Tiptap\Marks\Highlight;
 use Tiptap\Marks\Italic;
 use Tiptap\Marks\Link;
-use Tiptap\Marks\Underline;
+use Tiptap\Marks\Strike;
 use Tiptap\Nodes\Blockquote;
-use Tiptap\Nodes\Document;
-use Tiptap\Nodes\HardBreak;
 use Tiptap\Nodes\Image;
 use Tiptap\Nodes\Paragraph;
 use Tiptap\Nodes\Text;
@@ -47,16 +41,16 @@ it('adds extensions correctly', function (): void {
     $storyblok = new Storyblok($options);
     $extensions = $storyblok->addExtensions();
 
-    expect($extensions)->toHaveCount(24)
+    expect($extensions)->toHaveCount(30)
         ->and($extensions[0])->toBeInstanceOf(Image::class)
         ->and($extensions[1])->toBeInstanceOf(Text::class)
         ->and($extensions[2])->toBeInstanceOf(Paragraph::class)
         ->and($extensions[3])->toBeInstanceOf(Link::class)
         ->and($extensions[4])->toBeInstanceOf(Blockquote::class)
         ->and($extensions[5])->toBeInstanceOf(Bold::class)
-        ->and($extensions[6])->toBeInstanceOf(Italic::class)
-        ->and($extensions[7])->toBeInstanceOf(Underline::class)
-        ->and($extensions[8])->toBeInstanceOf(Document::class);
+        ->and($extensions[6])->toBeInstanceOf(Code::class)
+        ->and($extensions[7])->toBeInstanceOf(Highlight::class)
+        ->and($extensions[8])->toBeInstanceOf(Strike::class);
 });
 
 it('enables only three extensions', function (): void {
@@ -68,6 +62,12 @@ it('enables only three extensions', function (): void {
             'link' => false,
             'blockquote' => false,
             'bold' => true,
+            'code' => false,
+            'highlight' => false,
+            'strike' => false,
+            'subscript' => false,
+            'superscript' => false,
+            'textStyle' => false,
             'italic' => true,
             'underline' => false,
             'hardBreak' => false,
