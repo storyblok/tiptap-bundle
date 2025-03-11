@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Storyblok\TiptapBundle\Extension;
 
 use Storyblok\TiptapBundle\Node\Blok;
@@ -101,7 +103,7 @@ final class Storyblok extends Extension
             $this->options['extensions']['heading'] ? new Heading() : null,
             $this->options['extensions']['codeBlock'] ? new CodeBlock() : null,
             $this->options['extensions']['blok'] ? new Blok([
-                'renderer' => $this->options['blokOptions']['renderer']
+                'renderer' => $this->options['blokOptions']['renderer'],
             ]) : null,
         ]);
     }

@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Storyblok\TiptapBundle\Node;
 
 use Safe\Exceptions\JsonException;
 use Storyblok\TiptapBundle\Exception\InvalidConfigurationException;
 use Tiptap\Core\Node;
+
 use function Safe\json_decode;
 use function Safe\json_encode;
 
@@ -28,7 +31,7 @@ final class Blok extends Node
     {
         if (!is_callable($this->options['renderer'])) {
             throw new InvalidConfigurationException(
-                'You must provide a renderer function for the Blok extension'
+                'You must provide a renderer function for the Blok extension',
             );
         }
 
@@ -43,9 +46,9 @@ final class Blok extends Node
         foreach ($values as $value) {
             try {
                 $content .= ($this->options['renderer'])(json_decode(json_encode($value), true));
-            } catch (JsonException $e) {
+            } catch (JsonException) {
                 throw new InvalidConfigurationException(
-                    'Could not render the Blok extension'
+                    'Could not render the Blok extension',
                 );
             }
         }

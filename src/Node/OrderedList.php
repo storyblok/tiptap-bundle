@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Storyblok\TiptapBundle\Node;
 
 use Tiptap\Nodes\OrderedList as BaseOrderedList;
