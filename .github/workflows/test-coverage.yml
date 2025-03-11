@@ -54,7 +54,7 @@ jobs:
               env:
                   my_codecov_token: ${{ secrets.CODECOV_TOKEN }}
               if: ${{ env.my_codecov_token  != '' && hashFiles('./.build/logs/clover.xml')!= '' }}
-              uses: 'codecov/codecov-action@v5.1.2'
+              uses: 'codecov/codecov-action@v5.4.0'
               with:
                   files: './.build/logs/clover.xml'
                   token: ${{ env.my_codecov_token }}
