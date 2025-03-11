@@ -2,8 +2,8 @@
 
 This bundle provides Tiptap extensions for [Storyblok](https://www.storyblok.com/) integration in Symfony applications.
 
-| Branch | PHP                                                                                                                                                                   | Code Coverage                                                                                                               |
-|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Branch | PHP                                                                                                                                                            | Code Coverage                                                                                                              |
+|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
 | `main` | [![PHP](https://github.com/storyblok/tiptap-bundle/actions/workflows/php.yml/badge.svg)](https://github.com/storyblok/tiptap-bundle/actions/workflows/php.yml) | [![codecov](https://codecov.io/gh/storyblok/tiptap-bundle/graph/badge.svg)](https://codecov.io/gh/storyblok/tiptap-bundle) |
 
 Installation
