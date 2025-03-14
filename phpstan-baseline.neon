@@ -1,2 +1,26 @@
 parameters:
 	ignoreErrors:
+		-
+			message: "#^Property Storyblok\\\\Tiptap\\\\Node\\\\Blok\\:\\:\\$name has no type specified\\.$#"
+			count: 1
+			path: src/Node/Blok.php
+
+		-
+			message: "#^Property Storyblok\\\\Tiptap\\\\Node\\\\BulletList\\:\\:\\$name has no type specified\\.$#"
+			count: 1
+			path: src/Node/BulletList.php
+
+		-
+			message: "#^Property Storyblok\\\\Tiptap\\\\Node\\\\CodeBlock\\:\\:\\$name has no type specified\\.$#"
+			count: 1
+			path: src/Node/CodeBlock.php
+
+		-
+			message: "#^Property Storyblok\\\\Tiptap\\\\Node\\\\ListItem\\:\\:\\$name has no type specified\\.$#"
+			count: 1
+			path: src/Node/ListItem.php
+
+		-
+			message: "#^Property Storyblok\\\\Tiptap\\\\Node\\\\OrderedList\\:\\:\\$name has no type specified\\.$#"
+			count: 1
+			path: src/Node/OrderedList.php
