@@ -12,3 +12,7 @@
 # PHPCSFixer
 /.php_cs.cache
 /.php-cs-fixer.cache
+
+# PHPUnit
+phpunit.xml
+.phpunit.result.cache
