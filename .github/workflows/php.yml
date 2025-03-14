@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - "develop"
-      - "master"
+      - "main"
 
 env:
   REQUIRED_PHP_EXTENSIONS: "ctype, filter, hash, iconv, json"
