@@ -2,12 +2,20 @@
 
 declare(strict_types=1);
 
+/**
+ * This file is part of Storyblok-Api.
+ *
+ * (c) SensioLabs Deutschland <info@sensiolabs.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Storyblok\TiptapBundle\Node;
 
 use Safe\Exceptions\JsonException;
 use Storyblok\TiptapBundle\Exception\InvalidConfigurationException;
 use Tiptap\Core\Node;
-
 use function Safe\json_decode;
 use function Safe\json_encode;
 
@@ -15,7 +23,10 @@ final class Blok extends Node
 {
     public static $name = 'blok';
 
-    public function addOptions()
+    /**
+     * @return array<string, null>
+     */
+    public function addOptions(): array
     {
         return [
             'renderer' => null,
@@ -29,7 +40,7 @@ final class Blok extends Node
      */
     public function renderHTML(mixed $node, array $HTMLAttributes = []): array
     {
-        if (!is_callable($this->options['renderer'])) {
+        if (!\is_callable($this->options['renderer'])) {
             throw new InvalidConfigurationException(
                 'You must provide a renderer function for the Blok extension',
             );
