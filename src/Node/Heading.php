@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Storyblok\TiptapBundle\Node;
+namespace Storyblok\Tiptap\Node;
 
 use Tiptap\Nodes\Heading as BaseHeading;
 

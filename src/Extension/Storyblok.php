@@ -11,14 +11,14 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Storyblok\TiptapBundle\Extension;
+namespace Storyblok\Tiptap\Extension;
 
-use Storyblok\TiptapBundle\Node\Blok;
-use Storyblok\TiptapBundle\Node\BulletList;
-use Storyblok\TiptapBundle\Node\CodeBlock;
-use Storyblok\TiptapBundle\Node\Heading;
-use Storyblok\TiptapBundle\Node\ListItem;
-use Storyblok\TiptapBundle\Node\OrderedList;
+use Storyblok\Tiptap\Node\Blok;
+use Storyblok\Tiptap\Node\BulletList;
+use Storyblok\Tiptap\Node\CodeBlock;
+use Storyblok\Tiptap\Node\Heading;
+use Storyblok\Tiptap\Node\ListItem;
+use Storyblok\Tiptap\Node\OrderedList;
 use Tiptap\Core\Extension;
 use Tiptap\Marks\Bold;
 use Tiptap\Marks\Code;

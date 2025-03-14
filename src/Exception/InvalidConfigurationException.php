@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Storyblok\TiptapBundle\Exception;
+namespace Storyblok\Tiptap\Exception;
 
 class InvalidConfigurationException extends \RuntimeException
 {

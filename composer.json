@@ -32,12 +32,12 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Storyblok\\TiptapBundle\\": "src/"
+            "Storyblok\\Tiptap\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Storyblok\\TiptapBundle\\Tests\\": "tests/"
+            "Storyblok\\Tiptap\\Tests\\": "tests/"
         }
     },
     "config": {

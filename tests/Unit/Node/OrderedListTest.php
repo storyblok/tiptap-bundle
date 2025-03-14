@@ -11,10 +11,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Storyblok\TiptapBundle\Tests\Unit\Node;
+namespace Storyblok\Tiptap\Tests\Unit\Node;
 
 use PHPUnit\Framework\TestCase;
-use Storyblok\TiptapBundle\Node\OrderedList;
+use Storyblok\Tiptap\Node\OrderedList;
 
 final class OrderedListTest extends TestCase
 {

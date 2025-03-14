@@ -11,16 +11,16 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Storyblok\TiptapBundle\Tests\Unit\Extension;
+namespace Storyblok\Tiptap\Tests\Unit\Extension;
 
 use PHPUnit\Framework\TestCase;
-use Storyblok\TiptapBundle\Extension\Storyblok;
-use Storyblok\TiptapBundle\Node\Blok;
-use Storyblok\TiptapBundle\Node\BulletList;
-use Storyblok\TiptapBundle\Node\CodeBlock;
-use Storyblok\TiptapBundle\Node\Heading;
-use Storyblok\TiptapBundle\Node\ListItem;
-use Storyblok\TiptapBundle\Node\OrderedList;
+use Storyblok\Tiptap\Extension\Storyblok;
+use Storyblok\Tiptap\Node\Blok;
+use Storyblok\Tiptap\Node\BulletList;
+use Storyblok\Tiptap\Node\CodeBlock;
+use Storyblok\Tiptap\Node\Heading;
+use Storyblok\Tiptap\Node\ListItem;
+use Storyblok\Tiptap\Node\OrderedList;
 use Tiptap\Marks\Bold;
 use Tiptap\Marks\Code;
 use Tiptap\Marks\Highlight;

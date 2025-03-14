@@ -11,10 +11,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Storyblok\TiptapBundle\Node;
+namespace Storyblok\Tiptap\Node;
 
 use Safe\Exceptions\JsonException;
-use Storyblok\TiptapBundle\Exception\InvalidConfigurationException;
+use Storyblok\Tiptap\Exception\InvalidConfigurationException;
 use Tiptap\Core\Node;
 use function Safe\json_decode;
 use function Safe\json_encode;
