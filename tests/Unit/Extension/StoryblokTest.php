@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * This file is part of Storyblok-Api.
+ * This file is part of Storyblok PHP Tiptap Extension.
  *
  * (c) SensioLabs Deutschland <info@sensiolabs.de>
  *
@@ -53,7 +53,7 @@ final class StoryblokTest extends TestCase
      */
     public function addOptions(): void
     {
-        $this->assertSame(
+        self::assertSame(
             [
                 'extensions' => [
                     'image' => true,
@@ -100,7 +100,7 @@ final class StoryblokTest extends TestCase
      */
     public function addExtensions(): void
     {
-        $this->assertEquals(
+        self::assertEquals(
             [
                 new Image(),
                 new Text(),
