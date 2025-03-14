@@ -2,6 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Storyblok\TiptapBundle\Exception;
+/**
+ * This file is part of Storyblok PHP Tiptap Extension.
+ *
+ * (c) Storyblok GmbH
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-class InvalidConfigurationException extends \RuntimeException {}
+namespace Storyblok\Tiptap\Exception;
+
+class InvalidConfigurationException extends \RuntimeException
+{
+}

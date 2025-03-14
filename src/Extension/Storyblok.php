@@ -2,14 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Storyblok\TiptapBundle\Extension;
+/**
+ * This file is part of Storyblok PHP Tiptap Extension.
+ *
+ * (c) Storyblok GmbH
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-use Storyblok\TiptapBundle\Node\Blok;
-use Storyblok\TiptapBundle\Node\BulletList;
-use Storyblok\TiptapBundle\Node\CodeBlock;
-use Storyblok\TiptapBundle\Node\Heading;
-use Storyblok\TiptapBundle\Node\ListItem;
-use Storyblok\TiptapBundle\Node\OrderedList;
+namespace Storyblok\Tiptap\Extension;
+
+use Storyblok\Tiptap\Node\Blok;
+use Storyblok\Tiptap\Node\BulletList;
+use Storyblok\Tiptap\Node\CodeBlock;
+use Storyblok\Tiptap\Node\Heading;
+use Storyblok\Tiptap\Node\ListItem;
+use Storyblok\Tiptap\Node\OrderedList;
 use Tiptap\Core\Extension;
 use Tiptap\Marks\Bold;
 use Tiptap\Marks\Code;
@@ -38,15 +47,20 @@ use Tiptap\Nodes\Text;
 
 final class Storyblok extends Extension
 {
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(array $options = [])
     {
-        $default_options = $this->addOptions();
-        $this->options = [
-            'extensions' => array_merge($default_options['extensions'], $options['extensions'] ?? []),
-            'blokOptions' => array_merge($default_options['blokOptions'], $options['blokOptions'] ?? []),
-        ];
+        parent::__construct($options);
+
+        $this->options['extensions'] = array_merge($this->options['extensions'], $options['extensions'] ?? []);
+        $this->options['blokOptions'] = array_merge($this->options['blokOptions'], $options['blokOptions'] ?? []);
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function addOptions(): array
     {
         return [
@@ -88,7 +102,10 @@ final class Storyblok extends Extension
         ];
     }
 
-    public function addExtensions()
+    /**
+     * @return array<Extension>
+     */
+    public function addExtensions(): array
     {
         return array_filter([
             $this->options['extensions']['image'] ? new Image() : null,

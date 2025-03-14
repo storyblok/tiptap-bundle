@@ -1,55 +1,49 @@
 {
-    "name": "storyblok/tiptap-bundle",
-    "type": "symfony-bundle",
-    "description": "Tiptap extensions for Storyblok integration",
+    "name": "storyblok/php-tiptap-extension",
+    "description": "Tiptap extension to render Storyblok's RichText field",
     "license": "MIT",
+    "type": "library",
     "authors": [
         {
             "name": "Edoardo Dusi",
             "email": "edo@edoardodusi.com"
+        },
+        {
+            "name": "Silas Joisten",
+            "email": "silasjoisten@proton.me"
         }
     ],
     "require": {
-        "php": ">=8.1",
-        "symfony/framework-bundle": "^6.0|^7.0",
+        "php": ">=8.3",
         "thecodingmachine/safe": "^2.0 || ^3.0",
         "ueberdosis/tiptap-php": "^1.4"
     },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.2",
+        "ergebnis/data-provider": "^3.2",
+        "ergebnis/php-cs-fixer-config": "^6.28",
+        "ergebnis/test-util": "^1.5",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan": "^1.0",
+        "phpstan/phpstan-webmozart-assert": "^1.0",
+        "phpunit/phpunit": "^9.0",
+        "thecodingmachine/phpstan-safe-rule": "^1.0"
+    },
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Storyblok\\TiptapBundle\\": "src/"
+            "Storyblok\\Tiptap\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Storyblok\\TiptapBundle\\Tests\\": "tests/"
+            "Storyblok\\Tiptap\\Tests\\": "tests/"
         }
-    },
-    "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.65",
-        "phpstan/phpstan" : "^2.1",
-        "pestphp/pest": "^3.7",
-        "rector/rector": "^2"
-    },
-    "scripts": {
-        "static-code": "vendor/bin/phpstan analyse src/",
-        "style-fix-code": "export PHP_CS_FIXER_IGNORE_ENV=1; vendor/bin/php-cs-fixer fix --rules=@PER-CS2.0 src/",
-        "style-check-code": "export PHP_CS_FIXER_IGNORE_ENV=1; vendor/bin/php-cs-fixer check --rules=@PER-CS2.0 src/",
-        "test-code": "vendor/bin/pest",
-        "test-code-ci": "vendor/bin/pest -c . --ci --cache-directory ./tmp",
-        "refactor-check-code": "vendor/bin/rector --dry-run",
-        "test-coverage": "vendor/bin/pest --configuration=phpunit.xml.dist --coverage-html .build/html",
-        "all-checks": [
-            "@style-check-code",
-            "@static-code",
-            "@refactor-check-code",
-            "@test-code"
-        ]
     },
     "config": {
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "ergebnis/composer-normalize": true,
+            "phpstan/extension-installer": true
         }
-    },
-    "minimum-stability": "stable"
+    }
 }
