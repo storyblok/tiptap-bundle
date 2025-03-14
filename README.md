@@ -41,7 +41,7 @@ $editor = new Editor([
     ],
 ]);
 
-$editor->setContent($text->toArray());
+$editor->setContent(['type' => 'doc', 'content' => [['type' => 'paragraph', 'content' => [['type' => 'text', 'text' => 'Hello World']]]]);
 
 echo $editor->getHTML();
 ```
@@ -72,7 +72,7 @@ $editor = new Editor([
     ],
 ]);
 
-$editor->setContent($text->toArray());
+$editor->setContent(['type' => 'doc', 'content' => [['type' => 'paragraph', 'content' => [['type' => 'text', 'text' => 'Hello World']]]]);
 
 echo $editor->getHTML();
 ```
@@ -98,7 +98,7 @@ $editor = new Editor([
     ],
 ]);
 
-$editor->setContent($text->toArray());
+$editor->setContent(['type' => 'doc', 'content' => [['type' => 'paragraph', 'content' => [['type' => 'text', 'text' => 'Hello World']]]]);
 
 echo $editor->getHTML();
 ```
