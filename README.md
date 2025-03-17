@@ -1,13 +1,13 @@
 <div align="center">
-    <img src="assets/php-symfony-bundle-github-repository.png" alt="Storyblok PHP Tiptap Extension" align="center" />
+    <img src="assets/php-tiptap-extension-github-repository.png" alt="Storyblok PHP Tiptap Extension" align="center" />
     <h1 align="center">Storyblok PHP Tiptap Extension</h1>
     <p align="center">Co-created with <a href="https://sensiolabs.com/">SensioLabs</a>, the creators of Symfony.</p>
 </div>
 
 This library provides **Tiptap extensions** for [Storyblok’s](https://www.storyblok.com/) **RichText field**, enabling seamless integration with the [Tiptap for PHP](https://github.com/ueberdosis/tiptap-php) library.
 
-| Branch | PHP | Code Coverage |
-|--------|-----|--------------|
+| Branch | PHP                                                                                                                                                                          | Code Coverage                                                                                                                            |
+|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | `main` | [![PHP](https://github.com/storyblok/php-tiptap-extension/actions/workflows/php.yml/badge.svg)](https://github.com/storyblok/php-tiptap-extension/actions/workflows/php.yml) | [![codecov](https://codecov.io/gh/storyblok/php-tiptap-extension/graph/badge.svg)](https://codecov.io/gh/storyblok/php-tiptap-extension) |
 
 
